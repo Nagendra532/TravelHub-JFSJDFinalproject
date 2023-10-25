@@ -1,0 +1,7 @@
+.navbar {
+    background-color:  forestgreen; /* Change background color to black */
+  }
+
+  .navbar a {
+    color: lightgray /* Change text color to white */
+  }

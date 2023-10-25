@@ -1,0 +1,30 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+.heading {
+    background-color:gray;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 20px;
+    font-size: 28px;
+}
+
+
+
+.bgcolor{
+    background-color: blue;
+}
+  
+.custom-thead {
+    background-color: blue; /* Set the background color to blue */
+    color: white; /* Set the text color to white for better contrast */
+}
+
+body {
+    background-image: url('images/tourist.jpg'); /* Update the path to your image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+  }

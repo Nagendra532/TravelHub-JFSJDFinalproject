@@ -1,0 +1,13 @@
+<!-- passenger-details.component.html -->
+<div class="container">
+    <h2 class="text-center">Passenger Details</h2>
+    <div *ngIf="passenger" class="bg">
+        <p><strong>Name:</strong> {{ passenger.name }}</p>
+        <p><strong>Age:</strong> {{ passenger.age }}</p>
+        <p><strong>Mobile Number:</strong>{{passenger.mobile}}</p>
+        <p><strong>Location:</strong> {{ passenger.location }}</p>
+        <p><strong>Destination:</strong> {{ passenger.destination }}</p>
+        <p><strong>Amount:</strong> {{ passenger.amount }}</p>
+        <p><strong>date:</strong>{{passenger.date}}</p>
+    </div>
+</div>

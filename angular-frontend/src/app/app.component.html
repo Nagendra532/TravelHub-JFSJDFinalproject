@@ -1,0 +1,90 @@
+<div>
+  <ng-container *ngIf="!authService.getIsLoggedIn(); else userAdmin">
+    <app-login></app-login>
+  </ng-container>
+  <ng-template #userAdmin>
+    <div *ngIf="authService.isLoggedInUser(); then userContent; else adminContent"></div>
+  </ng-template>
+  <ng-template #userContent>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand font-weight-bolder head" routerLink="/home-page">
+        <em>Travel-Hub</em>
+      </a>
+      <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" [ngClass]="{'show': isNavbarOpen}" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/create-passenger" (click)="closeNavbar()">Register Passenger</a>
+          </li>
+          <!-- <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" (click)="logout()">Logout</a>
+          </li> -->
+        </ul>
+      </div>
+    </nav>
+    
+    <router-outlet></router-outlet>
+    <footer class="bg-dark text-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p>&copy; 2023 Travelhub</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <ul class="list-inline">
+              <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+              <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+              <li class="list-inline-item"><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </ng-template>
+  <ng-template #adminContent>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand font-weight-bolder head" routerLink="/home-page">
+        <em>Travel-Hub</em>
+      </a>
+      <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" [ngClass]="{'show': isNavbarOpen}" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/passengers" (click)="closeNavbar()">Passenger List |</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/destination-search" (click)="closeNavbar()">Control Passenger Data |</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/firsttrips" (click)="closeNavbar()">Next Trip List |</a>
+          </li>
+          <!-- <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" (click)="logout()">Logout</a>
+          </li> -->
+        </ul>
+      </div>
+    </nav>
+    
+    <router-outlet></router-outlet>
+    <footer class="bg-dark text-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p>&copy; 2023 Travelhub</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <ul class="list-inline">
+              <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+              <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+              <li class="list-inline-item"><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </ng-template>
+</div>

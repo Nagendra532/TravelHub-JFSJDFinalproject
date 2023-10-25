@@ -1,0 +1,23 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+img{
+    display: block;
+     margin: 0 auto;
+      box-shadow: 5px 5px 5px #888888; 
+      width: 80%;
+     height: 600px;
+}
+
+p{
+    background-color: lightcyan;
+}
+
+button{
+    background-color: #007bff; 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    margin-top: 20px; 
+    font-size: 1rem;
+}

@@ -1,0 +1,21 @@
+<div class="container">
+    <h2 class="text-center">Search Passenger</h2>
+    <div class="form-group">
+      <label for="id">Passenger ID</label>
+      <input type="number" class="form-control" id="id" [(ngModel)]="id" name="id">
+    </div>
+    <button (click)="searchPassenger()" class="btn btn-success mt-2">Search</button>
+    <div *ngIf="passenger !== null">
+      <h3>Passenger Details</h3>
+      <p>ID: {{ passenger.id }}</p>
+      <p>Name: {{ passenger.name }}</p>
+      <p>Age: {{ passenger.age }}</p>
+      <p>Mobile Number:{{passenger.mobile}}</p>
+      <p>Location: {{ passenger.location }}</p>
+      <p>Destination: {{ passenger.destination }}</p>
+    </div>
+    <div *ngIf="passenger === null">
+      <p>Passenger not found</p>
+    </div>
+  </div>
+  

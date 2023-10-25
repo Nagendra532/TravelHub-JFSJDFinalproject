@@ -1,0 +1,12 @@
+<!-- firsttrip-details.component.html -->
+<div class="container">
+    <h2 class="text-center"> First Trip Passenger Details</h2>
+    <div *ngIf="firsttrip" class="bg">
+        <p><strong>Name:</strong> {{ firsttrip.name }}</p>
+        <p><strong>Age:</strong> {{ firsttrip.age }}</p>
+        <p><strong>Mobile Number:</strong> {{ firsttrip.mobile }}</p>
+        <p><strong>Location:</strong> {{ firsttrip.location }}</p>
+        <p><strong>Destination:</strong> {{ firsttrip.destination }}</p>
+        <p><strong>Amount:</strong> {{ firsttrip.amount }}</p>
+    </div>
+</div>

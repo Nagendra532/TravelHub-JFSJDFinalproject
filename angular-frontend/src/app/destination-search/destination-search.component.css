@@ -1,0 +1,17 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+.heading {
+    color: black; /* Blue color for headings */
+    font-weight: bold; /* Bold text */
+}
+
+.sub-heading {
+    color: #333; /* Dark gray color for sub-headings */
+    font-weight: bold; /* Bold text */
+}
+
+.total-count {
+    color: black;
+    background-color: blanchedalmond;
+}
+/* now running on github */

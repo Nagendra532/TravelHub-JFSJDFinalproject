@@ -1,0 +1,46 @@
+<div class="container">
+  <h2 class="text-center">Register Passenger</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="passenger.name" name="name">
+    </div>
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input type="number" class="form-control" id="age" [(ngModel)]="passenger.age" name="age">
+    </div>
+    <div class="form-group">
+      <label for="mobile">Mobile Number:</label>
+      <input type="String" class="form-control" id="mobile" [(ngModel)]="passenger.mobile" name="mobile">
+    </div>
+    <div class="form-group">
+      <label for="location">Location:</label>
+      <input type="text" class="form-control" id="location" [(ngModel)]="passenger.location" name="location">
+    </div>
+    <div class="form-group">
+      <label for="destination">Destination:</label>
+      <select class="form-control" id="destination" [(ngModel)]="passenger.destination" name="destination">
+        <option value="">Select a Destination</option>
+        <option value="Great Wall of China">Great Wall of China</option>
+        <option value="Petra, Jordan">Petra, Jordan</option>
+        <option value="Christ the Redeemer, Brazil">Christ the Redeemer, Brazil</option>
+        <option value="Machu Picchu, Peru">Machu Picchu, Peru</option>
+        <option value="Chichen Itza, Mexico">Chichen Itza, Mexico</option>
+        <option value="Roman Colosseum, Italy">Roman Colosseum, Italy</option>
+        <option value="Taj Mahal, India">Taj Mahal, India</option>
+      </select>
+    </div>
+    <!-- <div class="form-group">
+      <label for="amount">Amount:</label>
+      <input type="number" class="form-control" id="amount" [(ngModel)]="passenger.amount" name="amount">
+    </div>
+    <div class="form-group">
+      <label for="date">Date:</label>
+      <input type="date" class="form-control" id="date" [(ngModel)]="passenger.date" name="date">
+    </div>     -->
+    <button class="btn btn-success mt-2" (click)="sendMessage()" type="submit">Submit</button>
+  </form>
+</div>
+<div *ngIf="messageStatus" class="alert alert-success">
+  {{ messageStatus }}
+</div>

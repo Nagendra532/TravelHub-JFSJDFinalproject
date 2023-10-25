@@ -1,0 +1,14 @@
+<div style="display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding: 20px;">
+    <h1 style="color: black; font-family: 'Arial', sans-serif; text-align: center; margin-top: 20px;">Travel Hub: Passenger Data Control</h1>
+    <div style="text-align: center; padding: 30px; border: 1px solid #ccc; border-radius: 10px; width: 400px; margin-top: 20px;">
+      <h2 style="color: #333; background-color:aliceblue;  font-family: 'Arial', sans-serif;">Login</h2>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Username" [(ngModel)]="username" style="border: 1px solid #ccc; border-radius: 5px; padding: 10px; margin: 10px 0;">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" placeholder="Password" [(ngModel)]="password" style="border: 1px solid #ccc; border-radius: 5px; padding: 10px; margin: 10px 0;">
+      </div>
+      <button (click)="login()" class="btn btn-primary" style="background-color: #007bff; color: #fff; border: none; border-radius: 5px; padding: 10px 20px; cursor: pointer;">Login</button>
+    </div>
+  </div>
+  

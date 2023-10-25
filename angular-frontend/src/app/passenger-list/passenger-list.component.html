@@ -1,0 +1,40 @@
+<body>
+    <div class="container">
+        <div class="heading">Passenger List</div>
+        <table class="table table-striped custom-table">
+            <thead class="custom-thead">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Contact</th>
+                    <th>Location</th>
+                    <th>Destination</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let passenger of passengers">
+                    <td>{{ passenger.id }}</td>
+                    <td>{{ passenger.name }}</td>
+                    <td>{{ passenger.age }}</td>
+                    <td>{{ passenger.mobile }}</td>
+                    <td>{{ passenger.location }}</td>
+                    <td>{{ passenger.destination }}</td>
+                    <td>${{ passenger.amount }}</td>
+                    <td>{{ passenger.date | date:'medium' }}</td>
+                    <td>
+                        <button (click)="updatePassenger(passenger.id)" class="btn btn-success">Update</button>
+                        <button (click)="deletePassenger(passenger.id)" class="btn btn-danger">Delete</button>
+                        <button (click)="viewPassengerDetails(passenger.id)" class="btn btn-primary">View</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+
+

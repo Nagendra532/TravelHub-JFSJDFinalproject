@@ -1,0 +1,70 @@
+<div class="container">
+    <h2 class="text-center heading">Destination Search</h2>
+    <div class="form-group">
+        <label for="searchDestination"></label>
+        <input type="text" class="form-control" id="searchDestination" name="Search by Destination" [(ngModel)]="searchTerm" (input)="search()" placeholder="Search by Destination">
+    </div>
+    
+
+    <h2 class="text-center heading">Name Search</h2>
+    <div class="form-group">
+        <label for="searchName" aria-placeholder="Search by Name"></label>
+        <input type="text" class="form-control" id="searchName" [(ngModel)]="searchnewTerm" (input)="searchname()" placeholder="Search by name">
+    </div>
+
+
+    <h3 class="sub-heading">Passengers List</h3>
+    <div class="total-count">
+        Total Count: {{ passengers.length }}
+      </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Contact</th>
+                <th>Location</th>
+                <th>Destination</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let passenger of filteredPassengers">
+                <td>{{passenger.id}}</td>
+                <td>{{ passenger.name }}</td>
+                <td>{{ passenger.age }}</td>
+                <td>{{passenger.mobile}}</td>
+                <td>{{ passenger.location }}</td>
+                <td>{{ passenger.destination }}</td>
+                <td>${{ passenger.amount }}</td>
+                <td>{{passenger.date}}</td>
+                <td>
+                    <button (click)="addToNextTrip(passenger)" class="btn btn-primary">Add to NextTrip</button>
+                    <button (click)="deletePassenger(passenger.id)" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container">
+    <h2 class="text-center heading">Search by Passenger Id</h2>
+    <div class="form-group">
+        <label for="id">Passenger ID</label>
+        <input type="number" class="form-control" id="id" [(ngModel)]="id" name="id">
+    </div>
+    <button (click)="searchPassenger()" class="btn btn-success mt-2">Search</button>
+    <div *ngIf="passenger !== null" style="background-color: aliceblue;">
+        <h3 class="sub-heading">Passenger Details</h3>
+        <p>ID: {{ passenger.id }}</p>
+        <p>Name: {{ passenger.name }}</p>
+        <p>Age: {{ passenger.age }}</p>
+        <p>Location: {{ passenger.location }}</p>
+        <p>Destination: {{ passenger.destination }}</p>
+    </div>
+    <div *ngIf="passenger === null" style="background-color: aliceblue;">
+        <p class="sub-heading">Passenger not found</p>
+    </div>
+</div>

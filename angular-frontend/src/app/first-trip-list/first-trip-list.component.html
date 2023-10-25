@@ -1,0 +1,49 @@
+<div class="container">
+    <h2 class="text-center">Current Trip:Passengers List</h2>
+    
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Contact</th>
+            <th>Location</th>
+            <th>Destination</th>
+            <th>Amount</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let firstTrip of firstTrips">
+            <td>{{firstTrip.id}}</td>
+            <td>{{ firstTrip.name }}</td>
+            <td>{{ firstTrip.age }}</td>
+            <td>{{firstTrip.mobile}}</td>
+            <td>{{ firstTrip.location }}</td>
+            <td>{{ firstTrip.destination }}</td>
+            <td>{{ firstTrip.amount }}</td>
+            <td>
+              <button (click)="viewFirstTrip(firstTrip.id)" class="btn btn-primary">View</button>
+              <button (click)="deleteFirstTrip(firstTrip.id)" class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table> 
+      <div class="total-count">
+        Total Count: {{ firstTrips.length }}
+      </div>
+      <button (click)="sendMessage()" class="btn btn-success">Send Trip Details</button>     
+  </div>
+
+  
+  <div class="container">
+    
+    <!-- ... Existing table code ... -->
+  
+    <!-- Add this div to display the message status -->
+    <div *ngIf="messageStatus" class="alert alert-success">
+      {{ messageStatus }}
+    </div>
+  </div>
+  
