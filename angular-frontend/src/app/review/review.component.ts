@@ -1,21 +1,33 @@
-// review.component.ts
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ReviewService } from '../services/review.service';
+
 
 @Component({
   selector: 'app-review',
   templateUrl: './review.component.html',
-  styleUrls: ['./review.component.css']
+  styleUrls: ['./review.component.css'],
 })
-export class ReviewComponent {
-  userRating: string = '5'; // Default rating
-  userComment: string = '';
-  reviews: Array<{ rating: string, comment: string }> = [];
+export class ReviewComponent implements OnInit {
+  reviews: any[] = [];
+  review: any = {
+    name: '',
+    rating: 1,
+    comment: '',
+  };
 
-  submitReview() {
-    // Add the user's review to the reviews array
-    this.reviews.push({ rating: this.userRating, comment: this.userComment });
-    // Clear the input fields
-    this.userRating = '5';
-    this.userComment = '';
+  constructor(private reviewService: ReviewService) {}
+
+  ngOnInit(): void {
+    this.reviews = this.reviewService.getReviews();
+  }
+
+  submitReview(): void {
+    this.reviewService.addReview(this.review);
+    this.reviews = this.reviewService.getReviews();
+    this.review = {
+      name: '',
+      rating: 1,
+      comment: '',
+    };
   }
 }
