@@ -14,6 +14,7 @@ import { FirstTripService } from '../services/firsttrip.service';
 export class DestinationSearchComponent implements OnInit {
   searchTerm: string = '';
   searchnewTerm: string = '';
+  searchnewdate: string = '';
   passengers: Passenger[] = [];
   filteredPassengers: Passenger[] = [];
   totalCount: number=0;
@@ -48,6 +49,31 @@ export class DestinationSearchComponent implements OnInit {
     this.searchEvent.emit(this.searchnewTerm);  
   }
 
+  searchdate() {
+    // Use the filter method to filter items based on the search date
+    console.log('Search Date Input:', this.searchnewdate);
+  
+    this.filteredPassengers = this.passengers.filter(passenger => {
+      const searchDate = new Date(this.searchnewdate);
+      console.log('Parsed Search Date:', searchDate);
+  
+      if (!isNaN(searchDate.getTime())) {
+        // Convert the passenger date string to a Date object
+        const passengerDate = new Date(passenger.date);
+  
+        if (!isNaN(passengerDate.getTime())) {
+          const formattedDate = passengerDate.toISOString().substring(0, 10);
+          console.log('Formatted Passenger Date:', formattedDate);
+  
+          return formattedDate.includes(searchDate.toISOString().substring(0, 10));
+        }
+      }
+      return false;
+    });
+  }
+  
+  
+  
   id: number;
   passenger: Passenger | null;
 
