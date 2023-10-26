@@ -10,6 +10,7 @@ import { PassengerDetailsComponentComponent } from './passenger-details-componen
 import { FirstTripListComponent } from './first-trip-list/first-trip-list.component';
 import { FirstTripDetailsComponent } from './first-trip-details/first-trip-details.component';
 
+import { ReviewComponent } from './review/review.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { UserRoutingModule } from './user-routing.module';
 import { LoginComponent } from './login/login.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
   { path: 'user', component: UserComponent },
+  { path: 'review', component:ReviewComponent},
   
   { path: '', redirectTo: 'login', pathMatch: 'full' }, // Default route
   

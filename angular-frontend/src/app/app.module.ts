@@ -22,6 +22,8 @@ import { AdminComponent } from './admin/admin.component';
 import { UserComponent } from './user/user.component';
 import { AuthService } from './auth.service';
 
+import { ReviewComponent } from './review/review.component';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { AuthService } from './auth.service';
     FirstTripDetailsComponent,
     LoginComponent,
     AdminComponent,
-    UserComponent
+    UserComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,
